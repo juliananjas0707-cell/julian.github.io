@@ -1,0 +1,81 @@
+:root {
+  --primary: #0129a1;
+  --secondary: #071952;
+  --third: #475fff;
+  --fourth: #ebf4f6;
+}
+
+.custom-navbar {
+  width: 100% !important;
+  height: 80px !important; /* Tinggi tetap! Tidak akan berubah saat scroll */
+  transition:
+    background-color 0.4s ease,
+    backdrop-filter 0.4s ease !important;
+  z-index: 1050;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 1rem !important; /* Padding samping konsisten */
+}
+
+/* 2. Kondisi Transparan (Atas) */
+.navbar-transparent {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
+/* 3. Kondisi Glass (Saat di-scroll) */
+.navbar-glass {
+  background-color: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 4. Pastikan Brand (Logo) dan Menu tetap di tengah secara vertikal */
+.custom-navbar .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 100%; /* Memaksa isi container mengikuti tinggi navbar */
+  margin: 0 auto !important;
+}
+
+/* Hapus col-3 atau grid kaku lainnya agar Brand tidak bergeser */
+.navbar-brand {
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 4. KHUSUS TAMPILAN MOBILE & TABLET SAAT DROPDOWN AKTIF */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    margin-top: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .button-nav {
+    margin-top: 1rem !important;
+    justify-content: center !important;
+  }
+
+  .button-nav .btn,
+  .button-nav .btn-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.5rem 0 !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    font-size: inherit !important;
+  }
+
+  .button-nav .btn:hover,
+  .button-nav .btn-btn:hover {
+    color: #ffffff !important;
+    background: transparent !important;
+  }
+}

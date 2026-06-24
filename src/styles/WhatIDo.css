@@ -1,0 +1,119 @@
+:root {
+  --primary: #0129a1;
+  --secondary: #071952;
+  --third: #475fff;
+  --fourth: #ebf4f6;
+}
+
+/* Latar belakang gradasi biru gelap ke biru terang */
+.what-i-do-section {
+  background: linear-gradient(135deg, #071952 0%, #0129a1 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Garis tebal di sebelah 'My Services' */
+.badge-line {
+  display: inline-block;
+  width: 67px;
+  height: 17px;
+  background-color: #3b82f6; /* Warna biru terang */
+  border-radius: 10px;
+}
+
+.section-subtitle {
+  color: var(--fourth);
+  letter-spacing: 1px;
+}
+
+.section-subtitle span {
+  color: var(--third);
+}
+
+/* Styling Card dengan efek premium */
+.service-card {
+  background-color: var(--fourth); /* Warna putih keabu-abuan (off-white) */
+  border-radius: 24px !important; /* Membuat sudut lebih melengkung */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  height: 455px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efek hover agar card sedikit terangkat */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Lingkaran pembungkus Icon */
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background-color: var(--secondary); /* Biru gelap (Navy) */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper:hover {
+  background-color: var(--primary);
+}
+
+.service-title {
+  color: #0b1a30;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.card-title {
+  font-size: 35px;
+  margin-top: 36px;
+  margin-bottom: 27px;
+}
+
+.card-text {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .what-i-do-section {
+    display: block !important; /* Matikan flex agar kembali ke block (rata kiri default) */
+    text-align: left !important;
+  }
+
+  .section-subtitle {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Memastikan badge dan card kembali ke kiri */
+  .badge-line {
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+
+  /* 3. Menyesuaikan Card agar responsif dan tetap di tengah */
+  .service-card {
+    width: 90% !important; /* Card mengisi 90% lebar layar agar tidak terlalu lebar */
+    margin: 0 auto 30px auto; /* '0 auto' adalah kunci untuk membuat elemen blok rata tengah */
+    height: auto !important; /* Biarkan tinggi menyesuaikan konten agar tidak terpotong */
+    padding: 20px; /* Memberi ruang di dalam card */
+  }
+
+  /* 4. Penyesuaian margin teks agar proporsional di HP */
+  .card-title {
+    font-size: 28px; /* Dikecilkan sedikit agar muat di layar HP */
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}

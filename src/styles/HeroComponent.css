@@ -1,0 +1,96 @@
+:root {
+  --primary: #0129a1;
+  --secondary: #071952;
+  --third: #475fff;
+  --fourth: #ebf4f6;
+}
+
+.hero-section {
+  position: relative !important;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px; /* Ditambah sedikit biar teks 85px gak nabrak Navbar fixed-top */
+  padding-bottom: 40px;
+  background-color: #000000; /* KUNCI UTAMA: Biar gak putih polos saat canvas render */
+  overflow: hidden; /* KUNCI UTAMA: Biar background gak bocor menutupi section bawah */
+  z-index: 2 !important; /* Turunkan sedikit dari 100 agar komponen dropdown navbar tetap di atasnya */
+}
+
+/* Memastikan canvas pendukung dipaksa mengikuti container */
+.darkveil-canvas {
+  display: block;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+.text-wrapper h1 {
+  font-size: 85px;
+  margin-bottom: 0;
+}
+
+.text-wrapper h2 {
+  font-size: 37px;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 0;
+}
+
+.paragraft {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.custom-portfolio-btn {
+  border: none !important;
+  background-color: var(--fourth) !important;
+  transition: all 0.3s ease;
+}
+
+.text-dark-blue,
+.icon-arrow {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.custom-portfolio-btn:hover {
+  background-color: var(--primary) !important;
+}
+
+.custom-portfolio-btn:hover .text-dark-blue,
+.custom-portfolio-btn:hover .icon-arrow {
+  color: #ffffff !important;
+}
+
+/* RESPONSIVE LAYOUT UNTUK HP (MAX-WIDTH: 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 200px; /* Memberi ruang agar tidak tertutup Navbar */
+    min-height: auto;
+    text-align: center !important; /* Buat teks rata tengah di HP */
+  }
+
+  .hero-section .text-start {
+    text-align: center !important;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem !important; /* Ukuran font Julian Anjas di HP */
+  }
+
+  .hero-section h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .paragraft br {
+    display: none; /* Hilangkan break-line agar teks paragraf memanjang natural */
+  }
+
+  .hero-img {
+    max-width: 80%; /* Perkecil sedikit karakter agar proporsional */
+    margin-top: 20px;
+  }
+}

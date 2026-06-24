@@ -1,0 +1,101 @@
+:root {
+  --primary: #0129a1;
+  --secondary: #071952;
+  --third: #475fff;
+  --fourth: #ebf4f6;
+}
+
+.about-contanier h1 {
+  padding-bottom: 40px;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.about-contanier p {
+  padding-bottom: 20px;
+  font-size: 20px;
+  text-align: justify;
+  width: 80%;
+  color: var(--secondary);
+}
+
+.about-btn {
+  height: 50px;
+  width: 150px;
+  background-color: var(--secondary) !important;
+  color: var(--fourth) !important;
+  font-weight: bold !important;
+  line-height: 2 !important;
+}
+
+.about-btn:hover {
+  background-color: var(--third) !important;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .text-wrapper-about p,
+  .about-text {
+    text-align: center !important; /* Mengubah dari justify menjadi rata tengah agar spasi kembali normal */
+    font-size: 0.95rem !important; /* Menyesuaikan ukuran font agar pas di layar HP */
+    line-height: 1.6 !important; /* Memberikan jarak antar baris yang ideal */
+    letter-spacing: normal !important; /* Mengembalikan kerning text ke setelan normal */
+    padding: 0 15px; /* Memberikan sedikit jarak di sisi kanan dan kiri layar */
+  }
+
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .wrapper-image-about {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .about-photo {
+    max-width: 70%; /* Ilustrasi disesuaikan ukurannya */
+  }
+
+  .text-wrapper-about {
+    text-align: center !important; /* Rata tengah agar seimbang */
+  }
+
+  .text-wrapper-about h1 {
+    font-size: 2.2rem !important;
+  }
+
+  /* FORCE CENTER UNTUK LAYAR HP (MAX-WIDTH: 768px) */
+
+  /* 1. Paksa container utama About untuk meluruskan semua isinya ke tengah */
+  .text-wrapper-about,
+  .about-section .col-lg-6,
+  .about-content-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Mengunci teks & button tepat di as tengah */
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+  }
+
+  /* 2. Pastikan paragraf teks tidak meluber atau menarik jarak aneh */
+  .text-wrapper-about p,
+  .about-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 3. Paksa tombol Download CV agar diam tepat di tengah */
+  .text-wrapper-about .btn,
+  .text-wrapper-about a,
+  .about-section button {
+    display: inline-block !important;
+    margin: 25px auto 0 auto !important; /* margin auto kiri-kanan bikin tombol center */
+    width: fit-content !important;
+  }
+}

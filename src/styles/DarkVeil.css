@@ -1,0 +1,10 @@
+.darkveil-canvas {
+  display: block;
+  position: fixed; /* Mengunci animasi di satu layar penuh */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh !important;
+  z-index: 1; /* Kita taruh di layer bawah */
+  pointer-events: none;
+}

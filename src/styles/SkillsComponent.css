@@ -1,0 +1,144 @@
+:root {
+  --primary: #0129a1;
+  --secondary: #071952;
+  --third: #475fff;
+  --fourth: #ebf4f6;
+}
+
+.skills-section {
+  background-color: var(
+    --fourth
+  ); /* Senada dengan bagian gelap dari gradasi sebelumnya */
+  position: relative;
+  z-index: 30; /* Memastikan berada di atas lapisan background shader */
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Garis aksen header */
+.skills-badge-line {
+  display: inline-block;
+  width: 67px;
+  height: 17px;
+  background-color: var(--third);
+  border-radius: 10px;
+}
+
+.skills-subtitle {
+  color: var(--third);
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.subtitle-skills {
+  font-size: 64px;
+  color: var(--secondary);
+}
+
+/* Kartu Skill Utama (Glassmorphism Halus) */
+.skill-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skills-tittle {
+  color: var(--secondary);
+}
+
+.skill-icon-box {
+  width: 55px;
+  height: 55px;
+  background: var(--secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+}
+
+.skill-icon-box:hover {
+  background-color: var(--primary);
+}
+
+/* Wadah Besar Grid Tools */
+.tools-wrapper {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 28px;
+}
+
+/* Kotak Ikon Software */
+.tool-item-box {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tool-logo {
+  width: 45px;
+  height: 45px;
+  filter: grayscale(40%) opacity(80%);
+  transition: all 0.3s ease;
+}
+
+.tool-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--secondary);
+  transition: all 0.3s ease;
+}
+
+/* Efek Hover untuk Tools Grid */
+.tool-item-box:hover .tool-logo {
+  filter: grayscale(0%) opacity(100%);
+  transform: scale(1.1);
+}
+
+.tool-item-box:hover .tool-name {
+  color: var(--primary) !important;
+  opacity: 1;
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}
+
+.software-tittle {
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .skills-section h2 {
+    font-size: 2.2rem !important;
+  }
+
+  /* Kartu core skills dibuat sedikit lebih compact */
+  .skill-card {
+    padding: 18px !important;
+    gap: 15px !important;
+  }
+
+  /* Mengurangi padding container tools di HP */
+  .tools-wrapper {
+    padding: 25px 15px !important;
+  }
+
+  /* Memastikan logo software berjejer rapi di HP */
+  .tool-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .tool-name {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,164 @@
+:root {
+  --primary: #0129a1;
+  --secondary: #071952;
+  --third: #475fff;
+  --fourth: #ebf4f6;
+}
+
+/* src/styles/ProjectComponent.css */
+
+.project-section {
+  background: linear-gradient(135deg, #071952 0%, #0129a1 100%);
+  position: relative;
+  z-index: 30; /* Aman dari tabrakan DarkVeil background */
+}
+
+/* Garis tebal di samping sub-header */
+.project-badge-line {
+  display: inline-block;
+  width: 67px;
+  height: 17px;
+  background-color: #3b82f6;
+  border-radius: 10px;
+}
+
+.project-subtitle {
+  color: var(--third);
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.featured-project {
+  font-size: 64px;
+  color: var(--fourth);
+}
+
+/* Container utama Kartu Proyek */
+.project-card {
+  background: rgba(3, 1, 93, 0.498);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  overflow: hidden; /* Mengunci gambar agar melengkung di pojok */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Pembungkus Gambar & Efek Zoom */
+.project-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.08); /* Efek zoom-in lembut saat di-hover */
+}
+
+/* Lapisan Gelap & Tombol yang Muncul Saat Hover */
+.project-overlay {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 17, 30, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Tombol Panah Melayang */
+.project-link-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-link-btn {
+  transform: translateY(0);
+}
+
+.project-link-btn:hover {
+  background-color: #3b82f6;
+}
+
+.project-link-btn:hover svg {
+  color: #ffffff !important;
+}
+
+/* Pengaturan Teks Dalam Card */
+.project-category {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  letter-spacing: 1.5px;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  letter-spacing: -0.3px;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: #82b1ff !important;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a3b8 !important;
+}
+
+.tracking-wider {
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+  .project-section h2 {
+    font-size: 2.2rem !important;
+  }
+
+  .project-img-wrapper {
+    height: 180px; /* Sesuaikan tinggi box gambar di HP */
+  }
+
+  /* Di HP, buat overlay sedikit transparan sejak awal agar tombol link terlihat */
+  .project-overlay {
+    opacity: 1;
+    background: rgba(11, 17, 30, 0.2);
+    backdrop-filter: none;
+  }
+
+  .project-link-btn {
+    transform: translateY(0);
+    width: 42px;
+    height: 42px;
+  }
+}
